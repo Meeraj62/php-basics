@@ -9,23 +9,13 @@
             id INTEGER PRIMARY KEY NOT NULL
             name VARCHAR(50) NOT NULL
             recipeId INTEGER NOT NULL
-            FOREIGN KEY (recipeId) REFERENCES recipes(id)                                                           
+            FOREIGN KEY (recipeId) REFERENCES recipes(id)       
+            
+        * Write an SQL update query that will increase the cost of all recipes that have an ingredient by
+            $2 and whose name exactly matches "tuna"
     */
 
-$db = new PDO('mysql:host=localhost;dbname=neotech', 'root', '');
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$updateSql = "UPDATE recipes r
-                JOIN ingredients i on r.id = i.recipeId
-                SET r.cost = r.cost + 2
-                where r.name = 'tuna'";
-
-$result = $db->exec($updateSql);
-
-if ($result) {
-    echo "Successfully updated";
-} else {
-    echo "Error";
-}
-
-$db = null;
+$sql = "UPDATE recipes r 
+            JOIN ingredients i on r.id = i.recipeId
+            SET r.cost = r.cost + 2
+            where r.name = 'tuna'";
