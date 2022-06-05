@@ -31,4 +31,4 @@ function getViewCount($json)
     return $sum;
 }
 
-echo getViewCount('{"apiVersion": "2.1", "videos": [{"id": "253", "category": "Music", "title": "Jingle Bells", "duration": 457, "viewCount": 88270796}]}');
+echo getViewCount('{"apiVersion": "2.1", "videos": [{"id": "253", "category": "Music", "title": "Jingle Bells", "duration": 457, "viewCount": 88270796},{"id": "253", "category": "Music", "title": "Jingle Bells", "duration": 457, "viewCount": 88270796}]}');
